@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>blogblog</title>
+  <link rel="manifest" href="/static/manifest.json">
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+<script>
+   if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(() => {
+      console.log('Service worker registered!');
+    }).catch((error) => {
+      console.log('Error registering service worker: ', error);
+    });
+  } else {
+    console.log('Not supported by browser');
+  }
+  document.write('<script type="text/javascript" color="160,32,240" opacity=\'1\' zIndex="-10" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"><\/script>');
+</script>
+
+</html>

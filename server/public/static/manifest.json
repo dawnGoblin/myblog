@@ -1,0 +1,23 @@
+{
+    "scope": "/",
+    "name": "Star Blog",
+    "short_name": "Star Blog",
+    "start_url": "/?from=homescreen",
+    "display": "standalone",
+    "description": "个人博客",
+    "orientation": "portrait",
+    "theme_color": "#3f51b5",
+    "background_color": "#fff",
+    "icons": [
+        {
+            "src": "./logo.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "./logo.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}

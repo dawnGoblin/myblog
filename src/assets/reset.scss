@@ -1,0 +1,97 @@
+
+/* reset */
+$link-color: #42B983;
+$font-color: #24292e;
+$white: #fff;
+$black: #000;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+iframe,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+button,
+input,
+textarea,
+th,
+td,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.618;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", sans-serif;
+  color: #24292e;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+textarea {
+  resize: vertical;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
+ul li{list-style: none}
+
+.blog-body {
+  max-width: 770px;
+  margin: 70px auto 0;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+a {
+  color: #24292e;
+}
+a:hover {
+  color: #409EFF;
+}
+
+.nothing{
+  text-align: center;
+  font-size: 25px;
+}
