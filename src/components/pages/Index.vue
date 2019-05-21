@@ -18,7 +18,7 @@
                   style="margin-right:10px"
                 >{{tag}}</el-tag>
               </h2>
-              <p class="article-body" >{{article.summary | cutString(180)}}</p>
+              <p class="article-body">{{article.summary | cutString(180)}}</p>
             </div>
             <div class="article-footer">
               <span class="iconfont icon-riqi icons">
@@ -59,7 +59,7 @@ export default {
       flag: 0,
       pageNum: 1,
       pageSize: 5,
-      count:0
+      count: 0
     };
   },
   components: { Header, Footer },
@@ -69,37 +69,42 @@ export default {
     },
     handleCurrentChange(val) {
       // console.log(`当前页: ${val}`);
-      this.getData(val,this.pageSize);
+      this.getData(val, this.pageSize);
       this.pageNum = val;
     },
     handleSizeChange(val) {
       // console.log(`每页 ${val} 条`);
       // this.pageSize = val;
     },
-    getData(pageNum,pageSize){
+    getData(pageNum, pageSize) {
       this.axios
-      .get("/api/getArticle", {
-        params: { state: 1, pageNum,pageSize }
-      })
-      .then(response => {
-        this.articleList = response.data[0];
-        this.count=response.data[1][0].count;
-        this.flag = this.articleList.length < 1 ? 0 : 1;
-        for (let item of this.articleList) {
-          let str = item.type
-            .substring(1, item.type.length - 1)
-            .replace(/\"/g, "");
-          let tag = str.split(",");
-          this.tags.push(tag);
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
+        .get("/api/getArticle", {
+          params: { state: 1, pageNum, pageSize }
+        })
+        .then(response => {
+          this.articleList = response.data[0];
+          this.count = response.data[1][0].count;
+          this.flag = this.articleList.length < 1 ? 0 : 1;
+          for (let item of this.articleList) {
+            let str = item.type
+              .substring(1, item.type.length - 1)
+              .replace(/\"/g, "");
+            let tag = str.split(",");
+            this.tags.push(tag);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   },
+  beforeRouteEnter(to, from, next) {
+      next(vm=>{
+        vm.article=to.query.article
+      })
+  },
   mounted() {
-    this.getData(this.pageNum,this.pageSize)
+    this.getData(this.pageNum, this.pageSize);
   }
 };
 </script>

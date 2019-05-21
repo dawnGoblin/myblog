@@ -245,6 +245,7 @@ module.exports = {
         res.send('ok');
       })
     })
+    connection.release()
   },
   //改变文章状态
   updateArticle(req, res, next) {
